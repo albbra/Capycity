@@ -69,6 +69,7 @@ void Laufzeit() {
     cout << "\nBitte neachste Aktion auswaehlen: " << endl;
     string Eingabe = "0";
     cin >> Eingabe;
+    cout << "\n" << endl;
     int Zahl = atoi(Eingabe.c_str());
     //nun auswählen
     switch (Zahl) {
@@ -133,8 +134,8 @@ void gplatzieren() {
     send = sstart + send;
 
     if ((rend >= rstart) and (send >= sstart) and ((rstart >= 0) and (rstart <= breite)) and ((rend >= 0) and (rend <= breite)) and ((sstart >= 0) and (sstart <= laenge)) and ((send >= 0) and (send <= laenge))) {
-        for (int i = sstart; i <= send; ++i) {
-            for (int j = rstart; j <= rend; ++j) {
+        for (int i = sstart; i < send; ++i) {
+            for (int j = rstart; j < rend; ++j) {
                 switch (art)
                 {
                 case 1: Baubereich[i][j] = Rathaus; break;
